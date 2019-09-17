@@ -12,6 +12,6 @@ import ru.aafanasiev.util.copier.mapper.MapperBuilder;
  */
 public class ObjectMapper {
     public static MapperBuilder builder() {
-
+        return new MapperBuilder();
     }
 }

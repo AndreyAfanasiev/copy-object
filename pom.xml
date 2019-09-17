@@ -6,15 +6,15 @@
 
   <groupId>ru.aafanasiev</groupId>
   <artifactId>copy-object</artifactId>
-  <version>0.0.4-SNAPSHOT</version>
+  <version>0.0.5-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>copy-object</name>
   <description>Copy object with conversation fields</description>
 
   <scm>
-    <url>scm:git:/home/aafanasyev/JavaProjects/home-prj/utils/copy-object/.git</url>
-    <connection>scm:git:/home/aafanasyev/JavaProjects/home-prj/utils/copy-object/.git</connection>
+    <url>scm:git:https://github.com/AndreyAfanasiev/copy-object.git</url>
+    <connection>scm:git:https://github.com/AndreyAfanasiev/copy-object.git</connection>
     <developerConnection>scm:git:/home/aafanasyev/JavaProjects/home-prj/utils/copy-object/.git</developerConnection>
   </scm>
 

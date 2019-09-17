@@ -42,7 +42,7 @@ public class MapperBuilder {
      * Getter in source class
      *
      * @param methodName Method name
-     * @return
+     * @return This object
      */
     public MapperBuilder from(String methodName) {
         checkClasses();
@@ -50,11 +50,11 @@ public class MapperBuilder {
     }
 
     /**
-     * Setter in target class<br/>
+     * Setter in target class<br>
      * Setter must be setted after <code>to</code> method.
      *
      * @param methodName Method name
-     * @return
+     * @return This object
      */
     public MapperBuilder to(String methodName) {
         checkClasses();
@@ -74,7 +74,7 @@ public class MapperBuilder {
         return this;
     }
 
-    private MapperBuilder concat() {
+    public MapperBuilder concat() {
         return this;
     }
 

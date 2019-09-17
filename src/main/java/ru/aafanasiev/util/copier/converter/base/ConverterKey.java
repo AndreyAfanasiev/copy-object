@@ -47,6 +47,7 @@ public class ConverterKey {
      * @param toClazz Destination class
      * @param toInstance If <code>true</code>: destination class compare is using <code>instanceof</code>
      * @param priority Priority of this converter
+     * @param mapperName Mapper name
      */
     @ConstructorProperties({"fromClazz", "fromInstance", "toClazz", "toInstance", "priority"})
     public ConverterKey(Class<?> fromClazz, boolean fromInstance,
