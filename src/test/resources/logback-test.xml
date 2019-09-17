@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration debug="false">
+
+  <timestamp key="file_stamp" datePattern="yyyyMMdd'T'HHmmss" />
+
+  <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%green(%d{HH:mm:ss.SSS}) %boldMagenta([%thread]) %red(%-5level) %cyan(%c): %msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+    <!-- <file>main-${file_stamp}.log</file> -->
+    <file>logs/test.log</file>
+    <append>false</append>
+    <encoder>
+      <pattern>%d{yyyy-dd-MM HH:mm:ss} [%t] %-5p %c[%L]]: %m%n</pattern>
+      <outputPatternAsHeader>false</outputPatternAsHeader>
+      <charset>UTF-8</charset>
+    </encoder>
+  </appender>
+
+  <!-- <appender name="APP" class="ch.qos.logback.core.FileAppender"> -->
+  <!-- <file>main-${file_stamp}.log</file> -->
+  <!-- <file>log/app.log</file> -->
+  <!-- <append>false</append> -->
+  <!-- <encoder> -->
+  <!-- <pattern>%d{yyyy-dd-MM HH:mm:ss} [%t] %-5p %c: %m%n</pattern> -->
+  <!-- <outputPatternAsHeader>false</outputPatternAsHeader> -->
+  <!-- <charset>UTF-8</charset> -->
+  <!-- </encoder> -->
+  <!-- </appender> -->
+
+  <logger name="ru.aafanasiev" level="TRACE"/>
+
+  <logger name="com.zaxxer.hikari" level="WARN"/>
+  <logger name="springfox" level="WARN"/>
+
+  <logger name="org.apache" level="WARN"/>
+  <logger name="org.apache.activemq" level="WARN"/>
+
+  <logger name="javax.management" level="WARN"/>
+  <logger name="java.io.serialization" level="WARN"/>
+  <logger name="sun.rmi" level="WARN"/>
+
+  <logger name="org.springframework" level="WARN"/>
+
+  <logger name="org.hibernate" level="WARN"/>
+
+  <logger name="org" level="WARN"/>
+
+  <logger name="sf" level="WARN"/>
+
+  <logger name="liquibase" level="WARN"/>
+  <logger name="LiquibaseSchemaResolver" level="WARN"/>
+
+  <!-- <logger name="org.springframework.jdbc.datasource.DataSourceTransactionManager" level="WARN" /> -->
+  <!-- <logger name="org.springframework.jdbc" level="WARN" /> -->
+  <!-- <logger name="org.springframework.transaction" level="WARN" /> -->
+
+  <!-- <logger name="org.springframework.jdbc.datasource.DataSourceTransactionManager" level="WARN" /> -->
+  <!-- <logger name="org.springframework.jdbc" level="WARN" /> -->
+  <!-- <logger name="org.springframework.transaction" level="WARN" /> -->
+
+  <root level="TRACE">
+    <appender-ref ref="CONSOLE" />
+    <appender-ref ref="FILE" />
+  </root>
+
+</configuration>

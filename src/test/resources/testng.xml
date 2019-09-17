@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Converted JUnit suite" parallel="tests" thread-count="5">
+<!--   <test name="JUnitTests" junit="true"> -->
+<!--     <classes> -->
+<!--       <class name="com.aafanasiev.bux.controller.UserControllerUnit" /> -->
+<!--       <class name="com.aafanasiev.bux.controller.LoginControllerUnit" /> -->
+<!--       <class name="com.aafanasiev.bux.controller.PasswordControllerUnit" /> -->
+<!--     </classes> -->
+<!--   </test> -->
+
+  <test name="TestNGTests" junit="false">
+    <classes>
+      <class name="ru.aafanasiev.GlobalTestSuite" />
+    </classes>
+  </test>
+
+</suite>
