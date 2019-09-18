@@ -7,16 +7,12 @@ import static org.testng.Assert.assertNull;
 
 import org.testng.annotations.Test;
 
-import ru.aafanasiev.util.copier.converter.base.CopyConverter;
-import ru.aafanasiev.util.copier.converter.base.CopyEntry;
+import ru.aafanasiev.util.copier.converter.CopyConverterBase;
 
 /**
  * @author aafanasyev
  */
-public class CopyConverterStrBase {
-    protected CopyConverter convertor;
-    protected CopyEntry entry;
-
+public class CopyConverterStrBase extends CopyConverterBase {
     /**
      * Test method for
      * {@link ru.aafanasiev.util.copier.converter.cint.CopyConverterInt2Long#convert(ru.aafanasiev.util.copier.converter.base.CopyEntry, java.lang.Object)}.

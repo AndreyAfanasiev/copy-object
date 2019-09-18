@@ -11,23 +11,18 @@ import java.sql.Date;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import ru.aafanasiev.util.copier.converter.CopyConverterBase;
 import ru.aafanasiev.util.copier.converter.base.ConverterKey;
-import ru.aafanasiev.util.copier.converter.base.CopyConverter;
-import ru.aafanasiev.util.copier.converter.base.CopyEntry;
-import ru.aafanasiev.util.copier.converter.cdate.CopyConverterSDate2UDate;
 
 /**
  * @author aafanasyev
  */
 @Test(groups = {"UTIL"}, ignoreMissingDependencies = true)
-public class CopyConverterSDate2UDateTest {
-    protected CopyConverter convertor;
-    protected CopyEntry entry;
-
+public class CopyConverterSDate2UDateTest extends CopyConverterBase {
     @BeforeMethod
     public void intitializeMethod() {
         convertor = new CopyConverterSDate2UDate();
-        entry = new CopyEntry();
+        init();
     }
 
     /**
@@ -51,8 +46,7 @@ public class CopyConverterSDate2UDateTest {
     }
 
     /**
-     * Test method for
-     * {@link ru.aafanasiev.util.copier.converter.cdate.CopyConverterUDate2UDate#listConvertedPairs()
+     * Test method for {@link ru.aafanasiev.util.copier.converter.cdate.CopyConverterUDate2UDate#listConvertedPairs()
      * listConvertedPairs()}.
      */
     @Test(enabled = true, ignoreMissingDependencies = true)

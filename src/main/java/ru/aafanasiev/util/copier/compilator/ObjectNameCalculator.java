@@ -4,8 +4,8 @@
 package ru.aafanasiev.util.copier.compilator;
 
 import ru.aafanasiev.annotations.NameCalculator;
-import ru.aafanasiev.util.copier.util.ReflectionUtils;
 import ru.aafanasiev.util.copier.converter.base.CopyEntry;
+import ru.aafanasiev.util.copier.util.ReflectionUtils;
 
 /**
  * Calculate destination method name for standard objects

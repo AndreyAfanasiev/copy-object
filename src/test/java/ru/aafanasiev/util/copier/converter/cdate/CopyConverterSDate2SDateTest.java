@@ -17,23 +17,19 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import ru.aafanasiev.annotations.CopyImmutable;
-import ru.aafanasiev.util.copier.util.ReflectionUtils;
+import ru.aafanasiev.util.copier.converter.CopyConverterBase;
 import ru.aafanasiev.util.copier.converter.base.ConverterKey;
-import ru.aafanasiev.util.copier.converter.base.CopyConverter;
-import ru.aafanasiev.util.copier.converter.base.CopyEntry;
+import ru.aafanasiev.util.copier.util.ReflectionUtils;
 
 /**
  * @author aafanasyev
  */
 @Test(groups = {"UTIL"}, ignoreMissingDependencies = true)
-public class CopyConverterSDate2SDateTest {
-    protected CopyConverter convertor;
-    protected CopyEntry entry;
-
+public class CopyConverterSDate2SDateTest extends CopyConverterBase {
     @BeforeMethod
     public void intitializeMethod() {
         convertor = new CopyConverterSDate2SDate();
-        entry = new CopyEntry();
+        init();
         entry.setParameters(new DateConverterParameters());
     }
 

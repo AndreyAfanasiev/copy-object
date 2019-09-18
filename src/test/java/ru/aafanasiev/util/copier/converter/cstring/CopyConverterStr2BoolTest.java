@@ -15,10 +15,9 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import ru.aafanasiev.annotations.CopyString2Boolean;
-import ru.aafanasiev.util.copier.util.ReflectionUtils;
 import ru.aafanasiev.util.copier.converter.base.ConverterKey;
-import ru.aafanasiev.util.copier.converter.base.CopyEntry;
 import ru.aafanasiev.util.copier.converter.cdouble.CopyConverterDoubleBase;
+import ru.aafanasiev.util.copier.util.ReflectionUtils;
 
 /**
  * @author aafanasyev
@@ -33,7 +32,7 @@ public class CopyConverterStr2BoolTest extends CopyConverterDoubleBase {
     @BeforeMethod
     public void intitialize() {
         convertor = new CopyConverterStr2Bool();
-        entry = new CopyEntry();
+        init();
         entry.setParameters(new Str2BoolParams(TRUE_VALUE, FALSE_VALUE));
     }
 

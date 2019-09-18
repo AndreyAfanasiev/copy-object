@@ -7,15 +7,12 @@ import static org.testng.Assert.assertNull;
 
 import org.testng.annotations.Test;
 
-import ru.aafanasiev.util.copier.converter.base.CopyConverter;
-import ru.aafanasiev.util.copier.converter.base.CopyEntry;
+import ru.aafanasiev.util.copier.converter.CopyConverterBase;
 
 /**
  * @author aafanasyev
  */
-public class CopyConverterDoubleBase {
-    protected CopyConverter convertor;
-    protected CopyEntry entry;
+public class CopyConverterDoubleBase extends CopyConverterBase {
 
     /**
      * Test method for

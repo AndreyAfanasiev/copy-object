@@ -55,6 +55,10 @@ public class Copier {
         CopyAlgorithmsCache.getInstance().clear();
     }
 
+    public MapperBuilder mapperBuilder() {
+        return MapperBuilder.createBuilder(analyze);
+    }
+
     /**
      * Copy object
      *

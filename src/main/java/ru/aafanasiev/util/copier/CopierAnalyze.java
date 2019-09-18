@@ -19,6 +19,7 @@ import org.slf4j.LoggerFactory;
 import ru.aafanasiev.util.copier.compilator.AllObjectsAndInterfaces;
 import ru.aafanasiev.util.copier.compilator.CopyNameCalculator;
 import ru.aafanasiev.util.copier.converter.base.CopyEntry;
+import ru.aafanasiev.util.copier.converter.base.CopyEntryImpl;
 import ru.aafanasiev.util.copier.util.ReflectionUtils;
 
 /**
@@ -246,7 +247,7 @@ class CopierAnalyze {
         }
 
         CopyNameCalculator nameCalculator = findNameCalculator(fromMethod);
-        CopyEntry entry = new CopyEntry(fromMethod);
+        CopyEntry entry = new CopyEntryImpl(fromMethod);
         if(!nameCalculator.calculateToName(entry)) {
             return null;
         }

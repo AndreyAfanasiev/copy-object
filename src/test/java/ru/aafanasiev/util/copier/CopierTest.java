@@ -20,6 +20,7 @@ import org.testng.annotations.Test;
 import ru.aafanasiev.util.copier.complex.Fint;
 import ru.aafanasiev.util.copier.converter.CopyConverterSimple;
 import ru.aafanasiev.util.copier.converter.base.CopyEntry;
+import ru.aafanasiev.util.copier.converter.base.CopyEntryImpl;
 import ru.aafanasiev.util.copier.converter.base.CopyErrorException;
 import ru.aafanasiev.util.copier.util.ReflectionUtils;
 
@@ -46,7 +47,7 @@ public class CopierTest {
 
         List<CopyEntry> algorithm = new ArrayList<>();
 
-        CopyEntry entry = new CopyEntry();
+        CopyEntry entry = new CopyEntryImpl();
         entry.setConverter(new CopyConverterSimple());
         entry.setFromMethod(ReflectionUtils.getMethod(TestClass.class, "getOne"));
         assertNotNull(entry.getFromMethod());
@@ -87,7 +88,7 @@ public class CopierTest {
 
         List<CopyEntry> algorithm = new ArrayList<>();
 
-        CopyEntry entry = new CopyEntry();
+        CopyEntry entry = new CopyEntryImpl();
         entry.setConverter(new CopyConverterSimple());
         entry.setFromMethod(ReflectionUtils.getMethod(TestClass.class, "getOne"));
         assertNotNull(entry.getFromMethod());

@@ -12,7 +12,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import ru.aafanasiev.util.copier.converter.base.ConverterKey;
-import ru.aafanasiev.util.copier.converter.base.CopyEntry;
 
 /**
  * @author aafanasyev
@@ -22,7 +21,7 @@ public class CopyConverterOffsetDateTime2LocalDateTest extends CopyConverterLoca
     @BeforeMethod
     public void intitialize() {
         convertor = new CopyConverterOffsetDateTime2LocalDate();
-        entry = new CopyEntry();
+        init();
     }
 
     /**

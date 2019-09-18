@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 
 import ru.aafanasiev.util.copier.converter.base.CopyConverter;
 import ru.aafanasiev.util.copier.converter.base.CopyEntry;
+import ru.aafanasiev.util.copier.converter.base.CopyEntryImpl;
 
 /**
  * @author aafanasyev
@@ -16,6 +17,10 @@ import ru.aafanasiev.util.copier.converter.base.CopyEntry;
 public class CopyConverterFloatBase {
     protected CopyConverter convertor;
     protected CopyEntry entry;
+
+    protected void init() {
+        entry = new CopyEntryImpl();
+    }
 
     /**
      * Test method for

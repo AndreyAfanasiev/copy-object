@@ -10,8 +10,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import ru.aafanasiev.util.copier.converter.base.ConverterKey;
-import ru.aafanasiev.util.copier.converter.base.CopyEntry;
-import ru.aafanasiev.util.copier.converter.cstring.CopyConverterStr2Float;
 
 /**
  * @author aafanasyev
@@ -21,7 +19,7 @@ public class CopyConverterStr2FloatTest extends CopyConverterStrBase {
     @BeforeMethod
     public void intitialize() {
         convertor = new CopyConverterStr2Float();
-        entry = new CopyEntry();
+        init();
     }
 
     /**

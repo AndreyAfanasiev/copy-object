@@ -9,9 +9,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import ru.aafanasiev.util.copier.converter.base.ConverterKey;
-import ru.aafanasiev.util.copier.converter.base.CopyEntry;
 import ru.aafanasiev.util.copier.converter.cdouble.CopyConverterDoubleBase;
-import ru.aafanasiev.util.copier.converter.clong.CopyConverterLong2Bool;
 
 /**
  * @author aafanasyev
@@ -21,7 +19,7 @@ public class CopyConverterLong2BoolTest extends CopyConverterDoubleBase {
     @BeforeMethod
     public void intitialize() {
         convertor = new CopyConverterLong2Bool();
-        entry = new CopyEntry();
+        init();
     }
 
     /**

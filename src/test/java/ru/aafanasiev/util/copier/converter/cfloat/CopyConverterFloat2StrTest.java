@@ -9,8 +9,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import ru.aafanasiev.util.copier.converter.base.ConverterKey;
-import ru.aafanasiev.util.copier.converter.base.CopyEntry;
-import ru.aafanasiev.util.copier.converter.cfloat.CopyConverterFloat2Str;
 
 /**
  * @author aafanasyev
@@ -20,7 +18,7 @@ public class CopyConverterFloat2StrTest extends CopyConverterFloatBase {
     @BeforeMethod
     public void intitialize() {
         convertor = new CopyConverterFloat2Str();
-        entry = new CopyEntry();
+        init();
     }
 
     /**
@@ -49,8 +47,7 @@ public class CopyConverterFloat2StrTest extends CopyConverterFloatBase {
     }
 
     /**
-     * Test method for
-     * {@link ru.aafanasiev.util.copier.converter.cfloat.CopyConverterFloat2Str#listConvertedPairs()
+     * Test method for {@link ru.aafanasiev.util.copier.converter.cfloat.CopyConverterFloat2Str#listConvertedPairs()
      * listConvertedPairs}.
      */
     @Test(enabled = true, ignoreMissingDependencies = true)

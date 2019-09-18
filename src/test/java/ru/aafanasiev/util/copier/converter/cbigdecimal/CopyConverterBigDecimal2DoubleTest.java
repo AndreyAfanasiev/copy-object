@@ -12,7 +12,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import ru.aafanasiev.util.copier.converter.base.ConverterKey;
-import ru.aafanasiev.util.copier.converter.base.CopyEntry;
+import ru.aafanasiev.util.copier.converter.base.CopyEntryImpl;
 
 /**
  * @author aafanasyev
@@ -22,7 +22,7 @@ public class CopyConverterBigDecimal2DoubleTest extends CopyConverterBigDecimalB
     @BeforeMethod
     public void intitialize() {
         convertor = new CopyConverterBigDecimal2Double();
-        entry = new CopyEntry();
+        entry = new CopyEntryImpl();
     }
 
     /**

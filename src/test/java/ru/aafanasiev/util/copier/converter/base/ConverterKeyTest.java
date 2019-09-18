@@ -60,7 +60,7 @@ public class ConverterKeyTest {
         assertFalse(key1.equals(null));
         assertTrue(key1.equals(key2));
         assertTrue(key1.equals(key1));
-        assertFalse(key1.equals(new CopyEntry()));
+        assertFalse(key1.equals(new CopyEntryImpl()));
 
         key2 = new ConverterKey(Fint.class, null);
         assertFalse(key1.equals(key2));

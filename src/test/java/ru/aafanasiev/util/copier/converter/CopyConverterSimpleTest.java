@@ -9,6 +9,7 @@ import static org.testng.Assert.assertNull;
 import org.testng.annotations.Test;
 
 import ru.aafanasiev.util.copier.converter.base.CopyEntry;
+import ru.aafanasiev.util.copier.converter.base.CopyEntryImpl;
 
 /**
  * @author aafanasyev
@@ -23,7 +24,7 @@ public class CopyConverterSimpleTest {
     @Test(enabled = true, ignoreMissingDependencies = true)
     public void testConvert() throws Exception {
         CopyConverterSimple convertor = new CopyConverterSimple();
-        CopyEntry entry = new CopyEntry();
+        CopyEntry entry = new CopyEntryImpl();
 
         Integer intRes = (Integer) convertor.convert(entry, 0);
         assertEquals(intRes.longValue(), 0L);

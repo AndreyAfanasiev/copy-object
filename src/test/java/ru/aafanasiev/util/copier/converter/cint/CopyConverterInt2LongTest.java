@@ -9,7 +9,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import ru.aafanasiev.util.copier.converter.base.ConverterKey;
-import ru.aafanasiev.util.copier.converter.base.CopyEntry;
 
 /**
  * @author aafanasyev
@@ -19,7 +18,7 @@ public class CopyConverterInt2LongTest extends CopyConverterIntBase {
     @BeforeMethod
     public void intitializeMethod() {
         convertor = new CopyConverterInt2Long();
-        entry = new CopyEntry();
+        init();
     }
 
     /**

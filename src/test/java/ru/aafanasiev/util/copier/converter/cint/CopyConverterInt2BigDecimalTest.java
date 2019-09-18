@@ -11,7 +11,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import ru.aafanasiev.util.copier.converter.base.ConverterKey;
-import ru.aafanasiev.util.copier.converter.base.CopyEntry;
 
 /**
  * @author aafanasyev
@@ -21,7 +20,7 @@ public class CopyConverterInt2BigDecimalTest extends CopyConverterIntBase {
     @BeforeMethod
     public void intitialize() {
         convertor = new CopyConverterInt2BigDecimal();
-        entry = new CopyEntry();
+        init();
     }
 
     /**

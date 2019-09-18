@@ -1,20 +1,37 @@
 /**
  *
  */
-package ru.aafanasiev.util.copier.mapper;
+package ru.aafanasiev.util.copier;
 
 import java.lang.reflect.Method;
+import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 /**
  * Mapper builder
  *
  * @author <a href="mailto:aafanasiev@umail.ru">Andrey Afanasiev</a>
  */
-public class MapperBuilder {
+class MapperBuilder {
+    private final CopierAnalyze copierAnalyze;
     private Class<?> fromClass;
     private Class<?> toClass;
+    private List<Method> fromMethods;
+    private List<Method> toMethods;
+    private Map<String, Method> fromMap;
+    private Map<String, Method> toMap;
     private Method fromMethod;
     private Method toMethod;
+
+    private MapperBuilder(CopierAnalyze copierAnalyze) {
+        this.copierAnalyze = copierAnalyze;
+    }
+
+    static MapperBuilder createBuilder(CopierAnalyze copierAnalyze) {
+        return new MapperBuilder(copierAnalyze);
+    }
 
     /**
      * Source class
@@ -24,6 +41,8 @@ public class MapperBuilder {
      */
     public MapperBuilder fromClass(Class<?> fromClass) {
         this.fromClass = fromClass;
+        fromMethods = copierAnalyze.getGetter(fromClass, Object.class);
+        fromMap = fromMethods.stream().collect(Collectors.toMap(Method::getName, Function.identity()));
         return this;
     }
 
@@ -35,6 +54,12 @@ public class MapperBuilder {
      */
     public MapperBuilder toClass(Class<?> toClass) {
         this.toClass = toClass;
+        toMethods = copierAnalyze.getGetter(toClass, Object.class);
+        toMap = toMethods.stream().collect(Collectors.toMap(Method::getName, Function.identity()));
+        return this;
+    }
+
+    public MapperBuilder createStandardMapper() {
         return this;
     }
 

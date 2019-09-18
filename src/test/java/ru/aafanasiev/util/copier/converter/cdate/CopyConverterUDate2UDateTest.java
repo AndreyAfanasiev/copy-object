@@ -16,8 +16,7 @@ import org.testng.annotations.Test;
 import ru.aafanasiev.util.copier.converter.base.ConverterKey;
 import ru.aafanasiev.util.copier.converter.base.CopyConverter;
 import ru.aafanasiev.util.copier.converter.base.CopyEntry;
-import ru.aafanasiev.util.copier.converter.cdate.CopyConverterUDate2UDate;
-import ru.aafanasiev.util.copier.converter.cdate.DateConverterParameters;
+import ru.aafanasiev.util.copier.converter.base.CopyEntryImpl;
 
 /**
  * @author aafanasyev
@@ -30,7 +29,7 @@ public class CopyConverterUDate2UDateTest {
     @BeforeMethod
     public void intitializeMethod() {
         convertor = new CopyConverterUDate2UDate();
-        entry = new CopyEntry();
+        entry = new CopyEntryImpl();
         entry.setParameters(new DateConverterParameters());
     }
 
@@ -60,8 +59,7 @@ public class CopyConverterUDate2UDateTest {
     }
 
     /**
-     * Test method for
-     * {@link ru.aafanasiev.util.copier.converter.cdate.CopyConverterUDate2UDate#listConvertedPairs()
+     * Test method for {@link ru.aafanasiev.util.copier.converter.cdate.CopyConverterUDate2UDate#listConvertedPairs()
      * listConvertedPairs()}.
      */
     @Test(enabled = true, ignoreMissingDependencies = true)

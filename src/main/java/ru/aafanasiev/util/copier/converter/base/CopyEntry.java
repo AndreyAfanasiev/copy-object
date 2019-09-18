@@ -1,160 +1,87 @@
 package ru.aafanasiev.util.copier.converter.base;
 
-import java.beans.ConstructorProperties;
 import java.lang.reflect.Method;
 
-/**
- * Single copy step description om copy algoriths.
- *
- * @author <a href="mailto:aafanasyev@umail.ru">Andrey Afanasiev</a>
- */
-public class CopyEntry {
-    /** Source method */
-    private Method fromMethod;
-    /** Destination method name */
-    private String toName;
-    /** Destination method */
-    private Method toMethod;
-    /** Convertor object */
-    private CopyConverter converter;
-    /** Convertor object parameters (depends of the convertor) */
-    private Object parameters;
-    /** Target method is getter */
-    private boolean targetGetter;
-
-    /**
-     * Default constructor
-     */
-    public CopyEntry() {
-        this(null, null, null);
-    }
-
-    /**
-     * Create object and set parameters for source
-     *
-     * @param fromMethod Source method
-     */
-    @ConstructorProperties({"fromMethod"})
-    public CopyEntry(Method fromMethod) {
-        this(fromMethod, null, null);
-    }
-
-    /**
-     * Create object and full initialze it
-     *
-     * @param fromMethod Source method
-     * @param toName Destination method name
-     * @param toMethod Destination method
-     */
-    @ConstructorProperties({"fromMethod", "toName", "toMethod"})
-    public CopyEntry(Method fromMethod, String toName, Method toMethod) {
-        this.fromMethod = fromMethod;
-        this.toName = toName;
-        this.toMethod = toMethod;
-        targetGetter = false;
-    }
+public interface CopyEntry {
 
     /**
      * Get convertor
      *
      * @return The converter for this copy step
      */
-    public CopyConverter getConverter() {
-        return converter;
-    }
+    CopyConverter getConverter();
 
     /**
      * Get source method
      *
      * @return Source method
      */
-    public Method getFromMethod() {
-        return fromMethod;
-    }
+    Method getFromMethod();
 
     /**
      * Get convertors parameters
      *
      * @return Convertors parameters
      */
-    public Object getParameters() {
-        return parameters;
-    }
+    Object getParameters();
 
     /**
      * Get destination method
      *
      * @return Destination method
      */
-    public Method getToMethod() {
-        return toMethod;
-    }
+    Method getToMethod();
 
     /**
      * Get destination method name
      *
      * @return Destination method name
      */
-    public String getToName() {
-        return toName;
-    }
+    String getToName();
 
     /**
      * Set converter
      *
      * @param converter The converter to set
      */
-    public void setConverter(CopyConverter converter) {
-        this.converter = converter;
-    }
+    void setConverter(CopyConverter converter);
 
     /**
      * Set source method
      *
      * @param fromMethod Source method to set
      */
-    public void setFromMethod(Method fromMethod) {
-        this.fromMethod = fromMethod;
-    }
+    void setFromMethod(Method fromMethod);
 
     /**
      * Set converter parameters
      *
      * @param parameters Converter parameters to set
      */
-    public void setParameters(Object parameters) {
-        this.parameters = parameters;
-    }
+    void setParameters(Object parameters);
 
     /**
      * Set destination method
      *
      * @param toMethod Destination method to set
      */
-    public void setToMethod(Method toMethod) {
-        this.toMethod = toMethod;
-    }
+    void setToMethod(Method toMethod);
 
     /**
      * Set destination method name
      *
      * @param toName Destination method name to set
      */
-    public void setToName(String toName) {
-        this.toName = toName;
-    }
+    void setToName(String toName);
 
     /**
      * @return the targetGetter
      */
-    public boolean isTargetGetter() {
-        return targetGetter;
-    }
+    boolean isTargetGetter();
 
     /**
      * @param targetGetter the targetGetter to set
      */
-    public void setTargetGetter(boolean targetGetter) {
-        this.targetGetter = targetGetter;
-    }
+    void setTargetGetter(boolean targetGetter);
+
 }

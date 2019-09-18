@@ -25,6 +25,7 @@ import ru.aafanasiev.util.copier.converter.CopyConverterSimple;
 import ru.aafanasiev.util.copier.converter.base.ConverterKey;
 import ru.aafanasiev.util.copier.converter.base.CopyConverter;
 import ru.aafanasiev.util.copier.converter.base.CopyEntry;
+import ru.aafanasiev.util.copier.converter.base.CopyEntryImpl;
 import ru.aafanasiev.util.copier.converter.base.CopyErrorException;
 import ru.aafanasiev.util.copier.converter.cint.CopyConverterInt2Long;
 import ru.aafanasiev.util.copier.util.ReflectionUtils;
@@ -50,7 +51,7 @@ public class CopierCompilatorTest {
         Method method = ReflectionUtils.getMethod(CopierCompilator.class, "compileCopy", CopyEntry.class);
         assertNotNull(method);
 
-        CopyEntry entry = new CopyEntry();
+        CopyEntry entry = new CopyEntryImpl();
 
         assertFalse((Boolean) method.invoke(compilator, entry));
 
@@ -88,7 +89,7 @@ public class CopierCompilatorTest {
     public void testCompileCopyList() throws Exception {
         List<CopyEntry> entryList = new ArrayList<>();
 
-        CopyEntry entry = new CopyEntry();
+        CopyEntry entry = new CopyEntryImpl();
 
         Method fromMethod = ReflectionUtils.getMethod(TestCopy.class, "getiField");
         Method toMethod = ReflectionUtils.getMethod(TestCopy.class, "setiField", int.class);
@@ -98,7 +99,7 @@ public class CopierCompilatorTest {
         entry.setToMethod(toMethod);
         entryList.add(entry);
 
-        entry = new CopyEntry();
+        entry = new CopyEntryImpl();
         toMethod = ReflectionUtils.getMethod(TestCopy.class, "setiField3", List.class);
         assertNotNull(fromMethod);
         assertNotNull(toMethod);

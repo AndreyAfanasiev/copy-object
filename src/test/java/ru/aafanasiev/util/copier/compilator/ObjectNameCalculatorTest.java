@@ -12,8 +12,9 @@ import org.testng.annotations.Test;
 
 import ru.aafanasiev.annotations.CopyTo;
 import ru.aafanasiev.annotations.NoCopy;
-import ru.aafanasiev.util.copier.util.ReflectionUtils;
 import ru.aafanasiev.util.copier.converter.base.CopyEntry;
+import ru.aafanasiev.util.copier.converter.base.CopyEntryImpl;
+import ru.aafanasiev.util.copier.util.ReflectionUtils;
 
 /**
  * @author aafanasyev
@@ -26,7 +27,7 @@ public class ObjectNameCalculatorTest {
     @BeforeMethod
     public void initialize() {
         calculator = new ObjectNameCalculator();
-        entry = new CopyEntry();
+        entry = new CopyEntryImpl();
     }
 
     /**

@@ -24,6 +24,7 @@ import org.testng.annotations.Test;
 import ru.aafanasiev.util.copier.compilator.CopyNameCalculator;
 import ru.aafanasiev.util.copier.compilator.ObjectNameCalculator;
 import ru.aafanasiev.util.copier.converter.base.CopyEntry;
+import ru.aafanasiev.util.copier.converter.base.CopyEntryImpl;
 import ru.aafanasiev.util.copier.util.ReflectionUtils;
 
 /**
@@ -96,7 +97,7 @@ public class CopierAnalyzeTest {
                 "createToMap", List.class);
 
         Map<String, Method> toMap = new HashMap<>();
-        CopyEntry copyEntry = new CopyEntry();
+        CopyEntry copyEntry = new CopyEntryImpl();
         // "getIndex", "setIndex", "getAbs", "setAbs",
         // "isBool", "setBool", "getStr", "setStr",
         // "getStr2", "setStr2", "getAbs2", "setAbs2",
@@ -115,22 +116,22 @@ public class CopierAnalyzeTest {
         List<Method> toMethods = analyze.getMethods(ZeroLevelObj.class, Object.class);
         toMap = (Map<String, Method>) methodMap.invoke(analyze, toMethods);
         // Test04
-        copyEntry = new CopyEntry(ZeroLevelObj.class.getMethod("getIndex"), "setWork", null);
+        copyEntry = new CopyEntryImpl(ZeroLevelObj.class.getMethod("getIndex"), "setWork", null);
         assertFalse(((Boolean) method.invoke(analyze, copyEntry, toMap)).booleanValue());
 
-        copyEntry = new CopyEntry(ZeroLevelObj.class.getMethod("getIndex"), "setIndex", null);
+        copyEntry = new CopyEntryImpl(ZeroLevelObj.class.getMethod("getIndex"), "setIndex", null);
         assertTrue(((Boolean) method.invoke(analyze, copyEntry, toMap)).booleanValue());
         assertNotNull(copyEntry.getToMethod());
         assertEquals(copyEntry.getToMethod(), ZeroLevelObj.class.getMethod("setIndex", int.class));
 
         // Test05
-        copyEntry = new CopyEntry(ZeroLevelObj.class.getMethod("getIndex"), "setWork", null);
+        copyEntry = new CopyEntryImpl(ZeroLevelObj.class.getMethod("getIndex"), "setWork", null);
         assertFalse(((Boolean) method.invoke(analyze, copyEntry, toMap)).booleanValue());
 
         // Test06
         toMethods = analyze.getMethods(FirstLevelObj.class, Object.class);
         toMap = (Map<String, Method>) methodMap.invoke(analyze, toMethods);
-        copyEntry = new CopyEntry(FirstLevelObj.class.getMethod("getAbs"), "setAbs", null);
+        copyEntry = new CopyEntryImpl(FirstLevelObj.class.getMethod("getAbs"), "setAbs", null);
         assertFalse(((Boolean) method.invoke(analyze, copyEntry, toMap)).booleanValue());
     }
 

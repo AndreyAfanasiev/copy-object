@@ -9,7 +9,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import ru.aafanasiev.util.copier.converter.base.ConverterKey;
-import ru.aafanasiev.util.copier.converter.base.CopyEntry;
 import ru.aafanasiev.util.copier.converter.cdouble.CopyConverterDoubleBase;
 
 /**
@@ -20,7 +19,7 @@ public class CopyConverterInt2BoolTest extends CopyConverterDoubleBase {
     @BeforeMethod
     public void intitialize() {
         convertor = new CopyConverterInt2Bool();
-        entry = new CopyEntry();
+        init();
     }
 
     /**
@@ -40,8 +39,7 @@ public class CopyConverterInt2BoolTest extends CopyConverterDoubleBase {
     }
 
     /**
-     * Test method for
-     * {@link ru.aafanasiev.util.copier.converter.bool.CopyConverterBool2Int#listConvertedPairs()}.
+     * Test method for {@link ru.aafanasiev.util.copier.converter.bool.CopyConverterBool2Int#listConvertedPairs()}.
      */
     @Test(enabled = true, ignoreMissingDependencies = true)
     public void testListConvertedPairs() throws Exception {

@@ -17,6 +17,7 @@ import ru.aafanasiev.annotations.CopyCustom;
 import ru.aafanasiev.util.copier.converter.base.ConverterKey;
 import ru.aafanasiev.util.copier.converter.base.CopyCustomConverter;
 import ru.aafanasiev.util.copier.converter.base.CopyEntry;
+import ru.aafanasiev.util.copier.converter.base.CopyEntryImpl;
 import ru.aafanasiev.util.copier.util.ReflectionUtils;
 
 /**
@@ -44,7 +45,7 @@ public class CopyConverterObj2ObjTest {
     public void testGetParams01() throws Exception {
         CopyConverterObj2Obj converter = new CopyConverterObj2Obj();
         ;
-        CopyEntry entry = new CopyEntry();
+        CopyEntry entry = new CopyEntryImpl();
         entry.setConverter(converter);
 
         getTestInt(entry);
@@ -65,7 +66,7 @@ public class CopyConverterObj2ObjTest {
     public void testGetParams02() throws Exception {
         CopyConverterObj2Obj converter = new CopyConverterObj2Obj();
         ;
-        CopyEntry entry = new CopyEntry();
+        CopyEntry entry = new CopyEntryImpl();
         entry.setConverter(converter);
 
         getTestEntry1(entry);
@@ -87,7 +88,7 @@ public class CopyConverterObj2ObjTest {
     public void testGetParams03() throws Exception {
         CopyConverterObj2Obj converter = new CopyConverterObj2Obj();
         ;
-        CopyEntry entry = new CopyEntry();
+        CopyEntry entry = new CopyEntryImpl();
         entry.setConverter(converter);
 
         getTestEntry2(entry);
@@ -110,7 +111,7 @@ public class CopyConverterObj2ObjTest {
     public void testConvert01() throws Exception {
         CopyConverterObj2Obj converter = new CopyConverterObj2Obj();
         ;
-        CopyEntry entry = new CopyEntry();
+        CopyEntry entry = new CopyEntryImpl();
         entry.setConverter(converter);
 
         getTestInt(entry);
@@ -127,7 +128,7 @@ public class CopyConverterObj2ObjTest {
     public void testConvert02() throws Exception {
         CopyConverterObj2Obj converter = new CopyConverterObj2Obj();
         ;
-        CopyEntry entry = new CopyEntry();
+        CopyEntry entry = new CopyEntryImpl();
         entry.setConverter(converter);
 
         getTestEntry1(entry);
@@ -144,7 +145,7 @@ public class CopyConverterObj2ObjTest {
     public void testConvert03() throws Exception {
         CopyConverterObj2Obj converter = new CopyConverterObj2Obj();
         ;
-        CopyEntry entry = new CopyEntry();
+        CopyEntry entry = new CopyEntryImpl();
         entry.setConverter(converter);
 
         getTestEntry2(entry);
@@ -160,7 +161,7 @@ public class CopyConverterObj2ObjTest {
     public void testListConvertedPairs() throws Exception {
         CopyConverterObj2Obj converter = new CopyConverterObj2Obj();
         ;
-        CopyEntry entry = new CopyEntry();
+        CopyEntry entry = new CopyEntryImpl();
         entry.setConverter(converter);
 
         assertEquals(converter.listConvertedPairs().getClass(), ConverterKey[].class);
@@ -208,12 +209,12 @@ public class CopyConverterObj2ObjTest {
 
         @CopyCustom(TestCustomConverter1.class)
         public CopyEntry getTestEntry1() {
-            return new CopyEntry();
+            return new CopyEntryImpl();
         }
 
         @CopyCustom(TestCustomConverter2.class)
         public CopyEntry getTestEntry2() {
-            return new CopyEntry();
+            return new CopyEntryImpl();
         }
     }
 

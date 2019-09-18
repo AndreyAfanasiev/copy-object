@@ -13,8 +13,8 @@ import org.slf4j.LoggerFactory;
 
 import ru.aafanasiev.annotations.CopyTo;
 import ru.aafanasiev.annotations.NoCopy;
-import ru.aafanasiev.util.copier.util.ReflectionUtils;
 import ru.aafanasiev.util.copier.converter.base.CopyEntry;
+import ru.aafanasiev.util.copier.util.ReflectionUtils;
 
 /**
  * Calculate destination method name for standard objects

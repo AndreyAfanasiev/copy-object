@@ -15,11 +15,11 @@ import java.util.Set;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import ru.aafanasiev.util.copier.util.ReflectionUtils;
 import ru.aafanasiev.util.copier.converter.base.ConverterKey;
 import ru.aafanasiev.util.copier.converter.base.CopyConverter;
 import ru.aafanasiev.util.copier.converter.base.CopyEntry;
 import ru.aafanasiev.util.copier.converter.base.CopyErrorException;
+import ru.aafanasiev.util.copier.util.ReflectionUtils;
 
 /**
  * Compilator for copy algorithm (copy programm). <br>
